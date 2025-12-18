@@ -9,9 +9,12 @@
       <p class="text-sm text-ink/70">演示版：选择一个食品，模拟检索“长寿知识图谱 (LKG)”。</p>
     </header>
 
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-start">
-      <section class="card p-4">
-        <div class="relative aspect-[3/4] w-full overflow-hidden rounded-organic bg-paper/60 ring-1 ring-ink/10 md:aspect-[4/3]">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-stretch">
+      <section class="card p-4 md:h-full">
+        <div
+          class="relative h-full w-full overflow-hidden rounded-organic bg-paper/60 ring-1 ring-ink/10"
+          style="min-height: 340px"
+        >
           <!-- organic scan frame -->
           <div class="absolute inset-5 rounded-[2rem] ring-2 ring-leaf/40"></div>
           <div class="absolute inset-7 rounded-[2rem] ring-1 ring-moss/25"></div>
@@ -31,7 +34,7 @@
         </div>
       </section>
 
-      <section class="card p-4">
+      <section class="card p-4 md:flex md:h-full md:flex-col">
         <div class="flex items-center justify-between gap-3">
           <div class="text-sm text-ink/70">模拟食品</div>
           <select v-model="selected" class="tap rounded-xl bg-paper/70 px-3 py-2 text-sm ring-1 ring-ink/10">
@@ -50,6 +53,7 @@
         </button>
 
         <p class="mt-2 text-xs text-ink/60">提示：会轻微震动（如设备支持），并播放 2 秒检索流程。</p>
+        <div class="hidden md:block md:flex-1"></div>
       </section>
     </div>
   </div>

@@ -45,8 +45,11 @@
           stroke-linecap="round"
         />
 
-        <text x="120" y="132" text-anchor="middle" class="fill-ink/60" style="font-size: 12px">
+        <text x="20" y="132" text-anchor="start" class="fill-ink/60" style="font-size: 12px">
           0
+        </text>
+        <text x="120" y="132" text-anchor="middle" class="fill-ink/40" style="font-size: 12px">
+          50
         </text>
         <text x="220" y="132" text-anchor="end" class="fill-ink/60" style="font-size: 12px">
           100
