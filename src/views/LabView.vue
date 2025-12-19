@@ -83,16 +83,44 @@ const displayedScore = computed(() => getDisplayedScore())
 
 const router = useRouter()
 
+hydrateAuth()
+
 const input = ref('')
 const thinking = ref(false)
-const messages = ref<ChatMessage[]>([
+
+// Demo conversations for guest users
+const demoMessages: ChatMessage[] = [
   {
-    id: 'seed',
+    id: 'demo-ai-1',
     role: 'ai',
     text:
-      '我是“逆龄餐桌”AI 营养科学家。\n你可以问我：这份食物如何影响 mTOR、AMPK、Sirtuin 与慢性炎症？\n\n（演示技巧：在回复里加入 [SCORE: 85] 来联动更新上方分数。）',
+      '我是"逆龄餐桌"AI 营养科学家。\n你可以问我：这份食物如何影响 mTOR、AMPK、Sirtuin 与慢性炎症？\n\n（演示技巧：在回复里加入 [SCORE: 85] 来联动更新上方分数。）',
   },
-])
+  {
+    id: 'demo-user-1',
+    role: 'user',
+    text: '这份希腊酸奶对高血糖人群有什么影响？',
+  },
+  {
+    id: 'demo-ai-2',
+    role: 'ai',
+    text:
+      '对于高血糖人群，希腊酸奶的优势在于：\n\n1. **低糖版本**：选择无添加糖版本可显著降低血糖峰值\n2. **蛋白质缓冲**：蛋白质有助于减缓碳水吸收速度\n3. **益生菌支持**：可能改善胰岛素敏感性\n\n但需注意：\n- 避免含糖/果味版本\n- 关注单次摄入量（建议 100-150g）\n- 搭配纤维食物（如坚果）可进一步平缓血糖曲线',
+  },
+  {
+    id: 'demo-user-2',
+    role: 'user',
+    text: 'mTOR 通路在这里起什么作用？',
+  },
+  {
+    id: 'demo-ai-3',
+    role: 'ai',
+    text:
+      'mTOR（雷帕霉素靶蛋白）通路在希腊酸奶场景中的角色：\n\n**激活因素**：\n- 亮氨酸等氨基酸（蛋白质含量高）\n- 适度的胰岛素信号\n\n**关键平衡**：\n- 低糖版本避免了"过度激活"：没有大量精制糖带来的持续高胰岛素\n- 蛋白质提供修复材料，但不会像高糖+高蛋白组合那样"过度促生长"\n\n**结论**：希腊酸奶的 mTOR 激活处于"适度有益"区间，既支持肌肉维持，又不会加速衰老。\n\n[SCORE: 88]',
+  },
+]
+
+const messages = ref<ChatMessage[]>(isAuthed.value ? [] : [...demoMessages])
 
 function parseScoreTag(text: string) {
   const m = text.match(/\[SCORE:\s*(\d{1,3})\]/i)
@@ -127,6 +155,11 @@ async function send() {
   const text = input.value.trim()
   if (!text || thinking.value) return
   input.value = ''
+
+  // Clear demo messages when user starts chatting
+  if (messages.value.length > 0 && messages.value[0].id.startsWith('demo-')) {
+    messages.value = []
+  }
 
   messages.value.push({ id: crypto.randomUUID(), role: 'user', text })
   thinking.value = true
