@@ -9,13 +9,7 @@
 
 ## Banner
 
-> TODO：后续替换为 Logo / Banner 图。
-
-```text
-[ Logo Placeholder ]
-逆龄餐桌 · Ageless Table
-基于“长寿知识图谱”的 AI 原生精准营养决策平台
-```
+![image-20251220234828651](README.zh-CN/banner.png)
 
 ---
 
@@ -56,7 +50,7 @@
 
 ## 架构图（Architecture）
 
-> TODO：将《创业计划书》第 8 页的 AI 流水线图导出为 `docs/architecture.png`。
+
 
 ![Architecture](docs/architecture.png)
 
@@ -142,5 +136,4 @@ npm run preview
 
 逆龄餐桌为教育与决策辅助性质的演示原型，不构成医疗建议。  
 如有疾病或用药相关问题，请咨询专业医疗人员。
-
 

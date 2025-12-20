@@ -9,13 +9,7 @@
 
 ## Banner
 
-> TODO: Replace with your logo/banner image.
-
-```text
-[ Logo Placeholder ]
-Ageless Table · 逆龄餐桌
-AI-native longevity nutrition decision platform
-```
+![image-20251220234828651](README/banner.png)
 
 ---
 
@@ -60,8 +54,6 @@ Combine LLM reasoning with **deterministic scoring and constraints** to produce 
 ---
 
 ## Architecture
-
-> TODO: Export the pipeline diagram (Business Plan p.8) to `docs/architecture.png`.
 
 ![Architecture](docs/architecture.png)
 
@@ -159,5 +151,4 @@ This repo currently ships a **mobile-first prototype** with:
 
 Ageless Table is a **demo/prototype** for education and decision support.  
 It does **not** provide medical diagnosis or treatment advice. For medical concerns, consult qualified professionals.
-
 
