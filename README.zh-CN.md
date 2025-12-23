@@ -9,7 +9,7 @@
 
 ## Banner
 
-![image-20251220234828651](README.zh-CN/banner.png)
+![image-20251220234828651](docs/banner.png)
 
 ---
 
@@ -50,21 +50,19 @@
 
 ## 架构图（Architecture）
 
-
-
-![Architecture](docs/architecture.png)
+![architecture](docs/architecture.png)
 
 ---
 
 ## 演示（Demo）
 
-> TODO：将 GIF 放入 `docs/`（或修改下方路径）。
-
 ### 1) 扫描 → 生成洞察报告
-![Demo: Scan to Insight](docs/demo-scan-to-insight.gif)
+
+![Demo: Scan to Insight](docs/demo-scan-to-insight.png)
 
 ### 2) Lab 对话 → 分数联动更新
-![Demo: Lab score binding](docs/demo-lab-score.gif)
+
+![Demo: Lab score binding](docs/demo-lab-score.png)
 
 ---
 

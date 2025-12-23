@@ -9,7 +9,7 @@
 
 ## Banner
 
-![image-20251220234828651](README/banner.png)
+![image-20251220234828651](docs/banner.png)
 
 ---
 
@@ -55,19 +55,18 @@ Combine LLM reasoning with **deterministic scoring and constraints** to produce 
 
 ## Architecture
 
-![Architecture](docs/architecture.png)
+![architecture](docs/architecture.png)
 
 ---
 
 ## Demo
 
-> TODO: Add GIFs under `docs/` (or update paths below).
-
 ### 1) Scan → Insight (Generate a Longevity Report)
-![Demo: Scan to Insight](docs/demo-scan-to-insight.gif)
+![Demo: Scan to Insight](docs/demo-scan-to-insight.png)
 
 ### 2) Lab → Score Binding (Dynamic UI Update)
-![Demo: Lab score binding](docs/demo-lab-score.gif)
+
+![Demo: Lab score binding](docs/demo-lab-score.png)
 
 ---
 
