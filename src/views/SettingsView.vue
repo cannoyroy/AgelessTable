@@ -146,7 +146,7 @@
         </div>
         <div class="flex justify-between">
           <span>版本号</span>
-          <span class="font-mono">v1.0.0</span>
+          <span class="font-mono">v1.0</span>
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@
         账号 · 登录 / 注册
       </div>
       <h1 class="text-2xl font-semibold tracking-tight">欢迎回到逆龄餐桌</h1>
-      <p class="text-sm text-ink/70">游客可浏览 Scan/Insight；登录后解锁 Lab 与 Profile。</p>
+      <p class="text-sm text-ink/70">游客可浏览 扫描/洞察；登录后解锁 对话 与 我的。</p>
     </header>
 
     <section class="card p-4">
