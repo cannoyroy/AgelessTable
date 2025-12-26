@@ -5,7 +5,7 @@
         <span class="h-2 w-2 rounded-full bg-leaf/80"></span>
         多模态感知 · The Scanner
       </div>
-      <h1 class="text-2xl font-semibold tracking-tight">把食物放到“森林光线”里</h1>
+      <h1 class="text-2xl font-semibold tracking-tight">把食物放到“逆龄餐桌”上</h1>
       <p class="text-sm text-ink/70">演示版：选择一个食品，模拟检索“长寿知识图谱 (LKG)”。</p>
     </header>
 
@@ -110,6 +110,7 @@ import { Upload } from 'lucide-vue-next'
 
 import { selectProduct, session } from '../state/session'
 import { addHistoryItem } from '../state/history'
+import { vibrate, shouldSaveHistory } from '../state/appSettings'
 
 type Phase = 'idle' | 'loading' | 'done'
 
@@ -181,7 +182,9 @@ function clearImage() {
 
 async function startScan() {
   phase.value = 'loading'
-  if (navigator.vibrate) navigator.vibrate(30)
+
+  // 触发震动反馈（根据设置）
+  vibrate(30)
 
   // If image uploaded, randomly select a product (simulating image recognition)
   const productId = previewUrl.value ? (['cola', 'bread', 'yogurt'][Math.floor(Math.random() * 3)] as 'cola' | 'bread' | 'yogurt') : selected.value
@@ -190,8 +193,10 @@ async function startScan() {
   await new Promise((r) => setTimeout(r, 2000))
   phase.value = 'done'
 
-  // Save to history
-  addHistoryItem(productId, session.insight, previewUrl.value || undefined)
+  // Save to history（根据设置）
+  if (shouldSaveHistory()) {
+    addHistoryItem(productId, session.insight, previewUrl.value || undefined)
+  }
 
   await new Promise((r) => setTimeout(r, 250))
   void router.push('/insight')

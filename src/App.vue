@@ -4,12 +4,18 @@
       <RouterView />
     </div>
     <BottomNav />
+
+    <!-- 全局组件 -->
+    <Toast />
+    <LoadingOverlay />
   </div>
 </template>
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import BottomNav from './components/BottomNav.vue'
+import Toast from './components/Toast.vue'
+import LoadingOverlay from './components/LoadingOverlay.vue'
 </script>
 
 

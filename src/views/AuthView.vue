@@ -5,7 +5,7 @@
         <span class="h-2 w-2 rounded-full bg-leaf/80"></span>
         账号 · 登录 / 注册
       </div>
-      <h1 class="text-2xl font-semibold tracking-tight">欢迎回到森林</h1>
+      <h1 class="text-2xl font-semibold tracking-tight">欢迎回到逆龄餐桌</h1>
       <p class="text-sm text-ink/70">游客可浏览 Scan/Insight；登录后解锁 Lab 与 Profile。</p>
     </header>
 

@@ -4,7 +4,7 @@
     aria-label="Bottom navigation"
   >
     <div
-      class="grid w-full grid-cols-4 gap-1 px-2 pt-2 pb-[calc(env(safe-area-inset-bottom)+0.5rem)] sm:px-6 lg:px-10"
+      class="grid w-full grid-cols-5 gap-1 px-2 pt-2 pb-[calc(env(safe-area-inset-bottom)+0.5rem)] sm:px-6 lg:px-10"
     >
       <RouterLink v-for="item in items" :key="item.to" :to="item.to" class="tap hoverleaf">
         <div
@@ -22,15 +22,16 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import { FlaskConical, Lightbulb, ScanLine, User } from 'lucide-vue-next'
+import { FlaskConical, Lightbulb, ScanLine, User, Settings } from 'lucide-vue-next'
 
 const route = useRoute()
 
 const items = computed(() => [
-  { label: 'Scan', to: '/scan', icon: ScanLine },
-  { label: 'Insight', to: '/insight', icon: Lightbulb },
-  { label: 'Lab', to: '/lab', icon: FlaskConical },
-  { label: 'Me', to: '/profile', icon: User },
+  { label: '扫描', to: '/scan', icon: ScanLine },
+  { label: '洞察', to: '/insight', icon: Lightbulb },
+  { label: '对话', to: '/lab', icon: FlaskConical },
+  { label: '我的', to: '/profile', icon: User },
+  { label: '设置', to: '/settings', icon: Settings },
 ])
 
 function isActive(to: string) {

@@ -2,7 +2,7 @@
   <div class="space-y-4">
     <header class="space-y-1">
       <div class="chip">实验室 · AI 营养科学家</div>
-      <h1 class="text-2xl font-semibold tracking-tight">在树荫下，问一个更聪明的问题</h1>
+      <h1 class="text-2xl font-semibold tracking-tight">在餐桌上，问一个更聪明的问题</h1>
       <p class="text-sm text-ink/70">
         演示版：输入包含 <span class="font-mono">[SCORE: 85]</span> 的内容，会自动更新洞察页分数。
       </p>
@@ -133,7 +133,7 @@ function parseScoreTag(text: string) {
 async function fakeDifyReply(userText: string) {
   // very light “scientist persona” with honest fallback
   if (userText.includes('未知') || userText.toLowerCase().includes('unknown')) {
-    return '关于此成分的生化通路，目前森林中尚无成熟研究记录。\n你可以提供配料表或剂量范围，我会给出更结构化的风险/收益框架。'
+    return '关于此成分的生化通路，目前餐桌中尚无成熟研究记录。\n你可以提供配料表或剂量范围，我会给出更结构化的风险/收益框架。'
   }
 
   return [

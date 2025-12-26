@@ -14,6 +14,18 @@
   --earth: 120 88 61;
   --skylight: 120 176 204;
   --paper: 251 250 246;
+
+  /* 过渡动画时长（可被设置控制） */
+  --transition-duration: 200ms;
+}
+
+/* 禁用动画类 */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
 }
 
 html,
